@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Noto_Sans_JP } from 'next/font/google';
 import { env } from '@/env';
+import { QueryProvider } from '@/libs/query-provider';
 
 import '@/styles/globals.css';
 
@@ -29,7 +30,9 @@ const RootLayout = ({
     lang="ja"
     className={notoSansJP.className}
   >
-    <body>{children}</body>
+    <body>
+      <QueryProvider>{children}</QueryProvider>
+    </body>
   </html>
 );
 
